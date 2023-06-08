@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="questions" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Questions</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .header {
+        min-height: 90vh;
+        width: 60vw;
+        margin: 40px 250px;
+        background-color: aqua;
+        display: grid;
+      }
+      .heading h1 {
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 40px;
+        text-decoration: underline;
+      }
+
+      .qes-title {
+        display: flex;
+        justify-content: space-between;
+        /* padding-bottom: 10px; */
+        border: 2px solid black;
+        padding: 20px 40px;
+        margin: 30px 20px;
+      }
+      .btns {
+        background: none;
+        border: none;
+        transition: all 0.3s ease;
+      }
+      .qes-text {
+        display: none;
+      }
+      .show-text .qes-text {
+        display: block;
+        padding: 0 50px;
+      }
+      .minus-btn {
+        display: none;
+      }
+      .show-text .minus-btn {
+        display: inline;
+      }
+      .show-text .plus-btn {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <div class="heading">
+        <h1>CSS-Program Questions</h1>
+      </div>
+      <div class="section">
+        <article class="question">
+          <div class="qes-title">
+            <p>
+              What is the Box model in CSS? Which CSS properties are a part of
+              it?
+            </p>
+
+            <button class="btns">
+              <span class="plus-btn"
+                ><i class="fa-regular fa-square-plus"></i
+              ></span>
+              <span class="minus-btn">
+                <i class="fa-regular fa-square-minus"></i>
+              </span>
+            </button>
+          </div>
+          <div class="qes-text">
+            <p>
+              A rectangle box is wrapped around every HTML element. The box
+              model is used to determine the height and width of the rectangular
+              box. The CSS Box consists of Width and height (or in the absence
+              of that, default values and the content inside), padding, borders,
+              margin.
+            </p>
+          </div>
+        </article>
+        <article class="question">
+          <div class="qes-title">
+            <p>
+              What are the advantages of using translate() instead of absolute
+              position?
+            </p>
+
+            <button class="btns">
+              <span class="plus-btn"
+                ><i class="fa-regular fa-square-plus"></i
+              ></span>
+              <span class="minus-btn">
+                <i class="fa-regular fa-square-minus"></i>
+              </span>
+            </button>
+          </div>
+          <div class="qes-text">
+            <p>
+              Translate() does not cause the browser to trigger repaint and
+              layout and instead only acts on the compositor. The absolute
+              position triggers the repaint or DOM reflow. So, translate() gives
+              better performance.
+            </p>
+          </div>
+        </article>
+        <article class="question">
+          <div class="qes-title">
+            <p>What is the grid system?</p>
+
+            <button class="btns">
+              <span class="plus-btn"
+                ><i class="fa-regular fa-square-plus"></i
+              ></span>
+              <span class="minus-btn">
+                <i class="fa-regular fa-square-minus"></i>
+              </span>
+            </button>
+          </div>
+          <div class="qes-text">
+            <p>
+              CSS Grid Layout is the most powerful layout system available in
+              CSS. It is said to be a 2-dimensional system, meaning it can
+              handle both columns and rows, unlike flexbox which is largely a
+              1-dimensional system.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <script>
+      let btns = document.querySelectorAll(".btns");
+      btns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          let activeBtn = e.currentTarget.parentElement.parentElement;
+          activeBtn.classList.toggle("show-text");
+        });
+      });
+    </script>
+  </body>
+</html>
